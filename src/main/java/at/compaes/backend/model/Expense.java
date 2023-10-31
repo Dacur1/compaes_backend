@@ -17,7 +17,13 @@ public class Expense {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String description;
+    /**
+     * TODO add category class
+     */
     private String category;
+    /**
+     * TODO add paymentMethod class
+     */
     private String paymentMethod;
     private Double amount;
     private Date date;
