@@ -25,6 +25,10 @@ public class ExpenseService {
         return expenseRepository.findAllByOrderByDateDesc();
     }
 
+    public List<Expense> findAllByOrderByDateAsc() {
+        return expenseRepository.findAllByOrderByDateAsc();
+    }
+
     public List<Expense> findAllByCategory(String category) {
         return expenseRepository.findAllByCategory(category);
     }

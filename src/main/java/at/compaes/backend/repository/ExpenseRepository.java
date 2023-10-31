@@ -13,6 +13,8 @@ public interface ExpenseRepository extends JpaRepository<Expense, Long> {
 
     List<Expense> findAllByOrderByDateDesc();
 
+    List<Expense> findAllByOrderByDateAsc();
+
     List<Expense> findAllByCategory(String category);
 
     List<Expense> findAllByPaymentMethod(String paymentMethod);
