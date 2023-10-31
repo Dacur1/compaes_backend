@@ -61,4 +61,19 @@ public class ExpenseController {
         }
         return new ResponseEntity<>(expenses, HttpStatus.OK);
     }
+
+    @GetMapping("/")
+    public ResponseEntity<List<Expense>> getExpensesByPaymentMethod(@RequestParam(required = false) String paymentMethod) {
+        List<Expense> expenses;
+
+        if (paymentMethod != null) {
+            expenses = expenseService.findAllByPaymentMethod(paymentMethod);
+        } else {
+            expenses = expenseService.findAllExpenses();
+        }
+        if (expenses.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<>(expenses, HttpStatus.OK);
+    }
 }
